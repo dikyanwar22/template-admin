@@ -40,6 +40,7 @@
     <!-- setting ukuran icon -->
     <style>
         @media (min-width: 1024px) {
+        /* untuk agar icon ditengah dan teks dibawahnya */
         .menu-item {
             display: flex;
             flex-direction: column;
@@ -56,6 +57,10 @@
             font-size: 12px;  /* ukuran teks */
             margin-top: 2px;
         }
+
+        .menu-arrow {
+            margin-top: -7px !important; /*untuk membuat icon mendekat keatas */
+        }
     }
     </style>
     <!-- setting ukuran icon -->
@@ -63,11 +68,13 @@
     <!-- untuk setting agar dropdown tidak terhalang scroll  -->
     <style>
         @media (min-width: 1024px) {
+        
+        /* untuk membuat scroll horizontal tanpa scroll vertikal */
         .custom-scroll-horizontal {
             position: relative !important;
             overflow-x: auto;
             overflow-y: hidden;
-            z-index: 1 !important;
+            /* z-index: 1 !important; */
             /* Untuk Firefox */
             scrollbar-width: thin;
             scrollbar-color: #888 #f1f1f1;
@@ -90,11 +97,11 @@
         /* Dropdown harus bisa keluar dari scroll */
         .dropdown-menu {
             position: fixed !important;  
-            z-index: 1050 !important; 
-            margin-top: -33px !important;
+            /* z-index: 1050 !important;  */
+            margin-top: -28px !important;
         }
 
-        /* Menampilkan submenu saat hover */
+        /* Menampilkan submenu saat hover pada dropdown */
         .custom-dropdown-submenu {
             position: absolute !important;
         }
@@ -562,13 +569,6 @@
                         <ul class="navbar-nav">
                             
                             <li class="nav-item dropdown hover-dropdown">
-                                <a class="nav-link menu-item" href="index.html">
-                                    <span class="menu-icon"><i class="fas fa-dashboard fa-2x"></i></span>
-                                    <span class="menu-text">Dashboard</span>
-                                </a>
-                            </li>
-                
-                            <li class="nav-item dropdown hover-dropdown">
                                 <a class="nav-link menu-item dropdown-toggle drop-arrow-none" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="menu-icon"><i class="ti ti-apps fa-2x"></i></span>
@@ -614,6 +614,42 @@
                                         </div>
                                     </div>
                                 </div>
+                            </li>
+
+                            <li class="nav-item dropdown hover-dropdown">
+                                <a class="nav-link menu-item dropdown-toggle drop-arrow-none" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="menu-icon"><i class="ti ti-apps fa-2x"></i></span>
+                                    <span class="menu-text">Module Name</span>
+                                    <div class="menu-arrow"></div>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="topnav-apps">
+                                    <a href="apps-calendar.html" class="dropdown-item">Calendar</a>
+                                    <a href="apps-calendar.html" class="dropdown-item">Calendar</a>
+                                    <a href="apps-calendar.html" class="dropdown-item">Calendar</a>
+                                    <a href="apps-calendar.html" class="dropdown-item">Calendar</a>
+                                    <a href="apps-calendar.html" class="dropdown-item">Calendar</a>
+                                    <a href="apps-calendar.html" class="dropdown-item">Calendar</a>
+                                    <div class="dropdown hover-dropdown">
+                                        <a class="dropdown-item dropdown-toggle drop-arrow-none" href="#"
+                                            role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-haspopup="true" aria-expanded="false">
+                                            User
+                                            <div class="menu-arrow"></div>
+                                        </a>
+                                        <div class="dropdown-menu custom-dropdown-submenu" aria-labelledby="topnav-user">
+                                            <a href="apps-user-contacts.html" class="dropdown-item">Contacts</a>
+                                            <a href="apps-user-profile.html" class="dropdown-item">Profile</a>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown hover-dropdown">
+                                <a class="nav-link menu-item" href="index.html">
+                                    <span class="menu-icon"><i class="fas fa-dashboard fa-2x"></i></span>
+                                    <span class="menu-text">Dashboard</span>
+                                </a>
                             </li>
 
                             <li class="nav-item dropdown hover-dropdown">
@@ -2182,6 +2218,7 @@
 
     </div>
 
+
     <!-- Vendor js -->
     <script src="assets/js/vendor.min.js"></script>
 
@@ -2193,8 +2230,6 @@
 
     <!-- Projects Analytics Dashboard App js -->
     <script src="assets/js/pages/dashboard.js"></script>
-
-   
 
 </body>
 
